@@ -1,0 +1,557 @@
+/* HTML 초기화 */
+/* HTML 초기화 */
+@font-face{
+    font-family: 'notosansb';
+    src:url(fonts/NotoSansKR-Bold.otf);
+}
+@font-face{
+    font-family: 'notosansre';
+    src:url(fonts/NotoSansKR-Regular.otf);
+}
+@font-face{
+    font-family: 'notosanslight';
+    src:url(fonts/NanumBarunGothicLight.ttf);
+}
+@font-face{
+    font-family: 'notosansbk';
+    src:url(fonts/NotoSansKR-Black.otf);
+}
+
+
+
+@font-face{
+    font-family: 'notosansre';
+    src:url(fonts/NotoSansKR-Regular.otf);
+}
+@font-face{
+    font-family: 'nanumbarun-bold';
+    src:url(fonts/NanumBarunGothicBold.ttf);
+}
+@font-face {
+    font-family: 'nanumbarun';
+    src: url(fonts/NanumBarunGothic.ttf);
+}
+
+
+*{
+    /* -webkit-font-smoothing: antialiased; */
+    margin:0;
+    padding:0;
+    letter-spacing:0.08rem ;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family:  'nanumbarun'
+
+    
+}
+
+
+
+
+
+
+ul,li,ol{
+    margin:0;
+    padding:0;
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.1rem;
+  
+    
+}
+
+
+
+
+#Container{
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease;
+    margin-top: 13.0rem;
+    position: relative;
+   
+}
+
+#Container.on{
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s ease;
+
+}
+#Container a:hover{
+    color:#9e9e9e;
+    transition: ease-out 0.3s;
+}
+
+#Container> nav{
+
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:2;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex:1 auto;
+    padding:1.2rem 2rem;
+    
+    
+    }
+
+#Container>nav>.nav_menus{
+    display: flex;
+    align-items: baseline;
+    
+   
+}
+
+#Container>nav>.nav_menus li{
+     position: relative;
+    margin:0.8rem 1.2rem;
+    
+}
+
+
+#Container>nav>.nav_menus .dropmenu .submenu1{
+display: none;
+position: absolute;
+left:-1.1rem;
+line-height:1.5;
+
+}
+
+
+
+#Container>nav>.nav_menus .dropmenu .submenu2{
+    display: none;
+    position: absolute;
+    left:-1.3rem;
+    width:9rem;
+    line-height:1.5;
+    
+    }
+#Container>nav>.nav_menus .dropmenu .submenu2:hover li{
+    display: block;
+
+}
+
+#Container>nav>.nav_menus .dropmenu .submenu1 li{
+    width:8rem;
+    line-height: 1.5;
+   
+}
+
+#Container>nav>.nav_menus li .main_logo{
+font-size: 3.0rem;
+font-weight: bolder;
+margin:0.8rem 1.2rem;
+}
+
+#Container>nav>.nav_menus li a{
+
+   font-family: 'notosansbold';
+   font-weight: bold;
+
+  color:black;
+  font-size:1.2rem;
+} 
+
+
+
+#Container>nav>.nav_icons{
+
+    display: flex;
+
+}
+#Container>nav>.nav_icons li{
+margin:0.8rem 0.8rem;
+
+}
+#Container>nav>.nav_icons li a{ 
+    color:black;
+
+
+}
+#Container>nav>.nav_icons li a i{
+   
+        font-size: 1.7rem;
+    
+}
+
+
+
+.joinFormCon{
+    
+    width:49%;
+    margin:0 auto;
+  
+    border:1px solid black;
+    padding:4rem 2.5rem 2.5rem 2.5rem;
+    flex:1 auto;
+
+
+}
+
+.joinFormCon>ul{
+ width:95%;
+
+}
+
+.joinForm ul>li{
+    display: flex;
+    flex-direction: column;
+    
+ 
+}
+.joinForm ul>li input{
+ width:100%;
+ height:7vh;
+ text-align: center;
+ font-size: 1.3rem;
+}
+
+
+
+.joinForm ul li .topTitle>div{
+    display: flex;
+    align-items: center;
+   
+}
+.joinForm ul li .topTitle>span{
+    font-size: 1.3rem;
+}
+.joinForm ul li .topTitle>div>span{
+    font-size: 1.3rem;
+}
+.topTitle{
+    display: flex;
+    
+}
+.joinForm>.li.topTitle>div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  
+    
+}
+.joinForm>ul>li>.topTitle{
+   display: flex;
+   justify-content: space-between;
+    align-content: center;
+    margin:1.2rem 0rem;
+
+}
+
+.joinForm>ul>li>.nameTopTitle{
+display: flex;
+flex-direction: column;
+}
+.joinForm>ul>li>.nameTopTitle>div{
+    margin:1.2rem 0rem;
+    display: flex;
+    align-items: center;
+}
+.joinForm>ul>li>.nameTopTitle>div>span{
+    font-size: 1.2rem;
+}
+
+.joinForm>ul>li>.phoneTopTitle{
+    display: flex;
+    flex-direction: column;
+}
+.joinForm>ul>li>.phoneTopTitle>div{
+    margin:0.9rem 0rem 0.5rem 0rem;
+}
+.joinForm>ul>li>.phoneTopTitle>div>span{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+}
+.joinForm>ul>li>.phoneTopTitle>.phoneNumCon{
+display: flex;
+}
+
+.joinForm>ul>li>.phoneTopTitle>.phoneNumCon>input ,select{
+    width:12%;
+    font-size: 1.1rem;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.emailTopTitle{
+    display: flex;
+    flex-direction: column;
+}
+.emailCon{
+    display: flex;
+   
+}
+.emailTopTitle>div{
+    display: flex;
+    align-items: center;
+    margin:0.7rem 0rem;
+}
+
+.emailTopTitle >div>span{
+    font-size:1.3rem;
+}
+.emailTopTitle>.emailCon>input[type="email"]{
+
+    width: 30%;
+  
+}
+
+h3{
+    font-size:1.7rem;
+    margin: 1.2rem 0rem;
+}
+
+.checkList{
+    border: 1px solid black;
+}
+.allCheckCon{
+    display: flex;
+    padding:2.5rem;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+.allCheckCon strong{
+    font-size: 1.7rem;
+
+}
+.allCheckCon #allCheck{
+    width:2.5rem;
+    height: 2.5rem;
+    margin-right:1.5rem;
+}
+
+.mustCheckCon1{
+
+    padding:2.5rem;
+    border-bottom: 1px solid black;
+}
+
+.mustCheckCon1 >p {
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0.4rem 0rem;
+}
+
+.mustCheckCon1 .content{
+    width:100%;
+    height: 20rem;
+    padding:3rem;
+    overflow-y: auto;
+
+    border:1px solid #747474;
+}
+
+.mustCheckCon1 .content p{
+    line-height: 1.4;
+    font-size: 1.4rem;
+    color:#747474;
+    letter-spacing: 0.1%;
+    padding-bottom: 1.7rem;
+}
+
+.must1Agree{
+    display: flex;
+    align-items: center;
+    margin-top:1.5rem;
+   
+}
+
+.must1Agree>span{
+
+    font-size: 1.4rem;
+}
+.must1Agree>#mustCheck1{
+    width:1.7rem;
+    height: 1.7rem;
+    margin-right:1.0rem;
+}
+label{
+    font-size: 1.5rem;
+}
+
+
+.allCheckCon input[type="checkbox"]{
+    width:1.7rem;
+    height: 1.7rem;
+    margin-right:1.0rem;
+}
+.mustCheckCon2{
+    padding:2.5rem;
+    border-bottom: 2px solid black;
+
+}
+
+.mustCheckCon2>p{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0.4rem 0rem;
+
+}
+
+.mustCheckCon2>.content{
+    width:100%;
+    height: 20rem;
+    padding:3rem;
+    overflow-y: auto;
+
+    border:1px solid #747474;
+}
+
+
+.mustCheckCon2 .content p{
+    line-height: 1.4;
+    font-size: 1.4rem;
+    color:#747474;
+    letter-spacing: 0.1%;
+    padding-bottom: 1.7rem;
+}
+
+.must2Agree {
+display: flex;
+align-items: center;
+margin-top:1.5rem;
+
+}
+.must2Agree>span{
+    font-size: 1.4rem;
+    
+}
+.must2Agree input[type="checkbox"]{
+    width:1.7rem;
+    height: 1.7rem;
+    margin-right:1.0rem;
+}
+
+.chooseCheckCon{
+    padding:2.5rem;
+}
+
+.chooseCheckCon>p{
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0.4rem 0rem;
+}
+
+.chooseCheckCon .content{
+
+    width:100%;
+    height: 20rem;
+    padding:3rem;
+    overflow-y: auto;
+
+    border:1px solid #747474;
+
+}
+
+.chooseCheckCon .content p{
+
+    line-height: 1.4;
+    font-size: 1.4rem;
+    color:#747474;
+    letter-spacing: 0.1%;
+    padding-bottom: 1.7rem;
+
+}
+
+.chooseAgree ul>li>div{
+   
+    display: flex;
+    
+    
+}
+.chooseAgree ul>li{
+    margin:1rem 0rem;
+    padding:0.5rem 0rem;
+}
+.chooseAgree ul>li>div>span{
+    font-size:1.4rem;
+}
+.chooseAgree ul>li input[type="checkbox"]{
+    width:1.7rem;
+    height: 1.7rem;
+    margin-right:1.0rem;
+}
+#submitCon{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding:1rem;
+}
+#submit{
+    border:1px solid black;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+   
+   width: 45%;
+   padding:2.5rem 4rem;
+    background-color: black;
+     text-align: center;
+    color:white;
+    transition:background-color 1s ease-in-out;
+    
+}
+
+#submit:hover{
+    
+    background-color: #ffffff;
+    transition:background-color 1s ease-in-out;
+    color:black !important;
+}
+
+#Container> footer {
+    display: flex;
+ flex:1 auto;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ border-top:0.1rem solid black;
+ padding:2rem;
+}
+
+#Container> footer .footerinner .top{
+    display: flex;
+    justify-content: center;
+}
+#Container>footer .footerinner .top li{
+    margin:1.0rem 0.5rem;
+}
+#Container>footer .footerinner .bottom li{
+    margin: 2rem 0.5rem;
+}
+
+#Container .topbtn{
+    opacity: 0;
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    transition:opacity ease-in-out 1s ;
+    
+}
+#Container .topbtn.on{
+    opacity: 1;
+    transition:opacity ease-in-out 1s;
+}
+#Container .topbtn>i{
+    font-size: 3rem;
+}
+
+.errorMsg{
+    padding-top:0.5rem;
+    font-size: 1.4rem;
+    color:red;
+}

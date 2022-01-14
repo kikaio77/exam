@@ -1,0 +1,409 @@
+@charset"UTF-8";
+
+
+/* HTML 초기화 */
+@font-face{
+    font-family: 'notosansb';
+    src:url(fonts/NotoSansKR-Bold.otf);
+}
+@font-face{
+    font-family: 'notosansre';
+    src:url(fonts/NotoSansKR-Regular.otf);
+}
+@font-face{
+    font-family: 'notosanslight';
+    src:url(fonts/NanumBarunGothicLight.ttf);
+}
+@font-face{
+    font-family: 'notosansbk';
+    src:url(fonts/NotoSansKR-Black.otf);
+}
+
+
+
+@font-face{
+    font-family: 'notosansre';
+    src:url(fonts/NotoSansKR-Regular.otf);
+}
+@font-face{
+    font-family: 'nanumbarun-bold';
+    src:url(fonts/NanumBarunGothicBold.ttf);
+}
+@font-face {
+    font-family: 'nanumbarun';
+    src: url(fonts/NanumBarunGothic.ttf);
+}
+
+
+*{
+    /* -webkit-font-smoothing: antialiased; */
+    margin:0;
+    padding:0;
+    letter-spacing:0.08rem ;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'notosansre';
+
+    
+}
+
+
+ul,li,ol{
+    margin:0;
+    padding:0;
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.1rem;
+  
+}
+
+#Container{
+    position:relative;
+}
+
+#Container >.loginView{
+   opacity: 0;
+   visibility: hidden;
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background-color: #ffffff;
+z-index: 9999; 
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 1s all;
+}
+
+#Container >.loginView.on{
+    opacity: 1;
+    visibility: visible;
+    transition: 1s all;
+}
+
+.sect01 {
+    position: absolute;
+    top:15%;
+    right:30%;
+    width: 40px; /* X 사이즈 */
+    height: 40px; /* X 세로 중앙 */
+    margin: 0 auto; /* 가운데 정렬 */
+  }
+  
+  .sect01 .line-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sect01 .line-box > span {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+  }
+  
+  .sect01 .line-01 {
+    transform: rotate(135deg) translateX(0%);
+    transition: transform ease 0.2s;
+  }
+  
+  .sect01 .line-02 {
+    transform: rotate(45deg) translateX(0%);
+    transition: transform ease 0.2s;
+  }
+
+  .sect01:hover .line-01{
+    transform: rotate(225deg) translateX(0%);
+    transition: transform ease 0.2s;
+  }
+
+  .sect01:hover .line-02{
+    transform: rotate(135deg) translateX(0%);
+    transition: transform ease 0.2s;
+  }
+#Container>.loginView .loginInner{
+    width: 38rem; 
+}
+#Container>.loginView .loginInner h3{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#Container>.loginView .loginInner>ul>li{
+    
+     margin:1.5rem 0rem;
+
+
+}
+#Container>.loginView .loginInner>ul>li input{
+    padding:0.2rem 0.2rem 0.2rem 1.4rem; 
+    width:100%;
+    height:6.5vh;
+    font-size: 1.3rem;
+    overflow: hidden;
+    white-space: nowrap;
+   
+}
+#Container>.loginView .loginInner>ul>li input:focus{
+    outline: none;
+}
+#Container>.loginView .loginInner>ul>li #pw{
+    border: none;
+    width:95%;
+}
+#Container>.loginView .loginInner>ul>li button{
+    padding:5px 2px;
+    width:100%;
+    height:5.5vh;
+    
+    border: none;
+    font-size: 12px;
+}
+#Container>.loginView .loginInner>ul>li>.pwcontainer{
+
+    display:flex;
+    align-items: center;
+    border:1px solid black;
+
+}
+
+
+#Container>.loginView .loginInner>ul>li>.pwcontainer i{
+    font-size: 2.2rem;
+    text-align: center;
+    padding:0.2rem;
+}
+#Container>.loginView .loginInner>ul>li #login{
+
+background-color: black;
+    color: white;
+
+}
+#Container>.loginView .loginInner>ul>li #login:hover{
+    background-color: #ffffff;
+    transition: background-color ease-in-out 0.5s;
+    color:black;
+    border: 1px solid black;
+    
+}
+
+#Container>.loginView .loginInner>ul>li #joinus{
+
+    background-color: #ffffff;
+        color: black;
+    border: 1px solid gray;
+    
+    }
+#Container>.loginView .loginInner>ul>li #joinus:hover{
+    background-color: gray;
+    transition: background-color ease-in-out 0.5s;
+    color:white;
+    border: 1px solid gray;
+
+}
+#Container>.loginView .loginInner>ul>li>ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Container>.loginView .loginInner>ul>li>ul>li::after{
+    margin-left: 5px;
+    margin-right:5px;
+    content: "|";
+
+}
+#Container>.loginView .loginInner>ul>li>ul>li:last-child::after{
+    content: "";
+}
+
+#Container> nav{
+
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:2;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex:1 auto;
+    padding:0.5rem 2rem;
+    opacity: 0;
+    transition: opacity 2s linear ;
+    
+    }
+
+#Container>nav>.nav_menus{
+    display: flex;
+    align-items: baseline;
+    
+   
+}
+
+#Container>nav>.nav_menus li{
+     position: relative;
+    margin:0.8rem 1.2rem;
+    
+}
+
+
+#Container>nav>.nav_menus .dropmenu .submenu1{
+display: none;
+position: absolute;
+left:-1.1rem;
+line-height:1.5;
+
+}
+
+
+
+#Container>nav>.nav_menus .dropmenu .submenu2{
+    display: none;
+    position: absolute;
+    left:-1.3rem;
+    width:9rem;
+    line-height:1.5;
+    
+    }
+#Container>nav>.nav_menus .dropmenu .submenu2:hover li{
+    display: block;
+
+}
+
+#Container>nav>.nav_menus .dropmenu .submenu1 li{
+    width:8rem;
+    line-height: 1.5;
+   
+}
+
+#Container>nav>.nav_menus li .main_logo>img{
+    filter: invert(99%) sepia(2%) saturate(1815%) hue-rotate(292deg) brightness(117%) contrast(100%);
+    transition: ease-in-out 0.3s;
+}
+#Container>nav>.nav_menus li .main_logo>img.active{
+
+ filter: invert(0%) sepia(3%) saturate(0%) hue-rotate(257deg) brightness(104%) contrast(104%);
+ transition: ease-in-out 0.3s;
+}
+
+#Container>nav>.nav_menus li a{
+    color:#ffffff;
+    font-size:1.2rem;
+    font-family: 'notosansbold';
+    font-weight: bold;
+    
+    color:black;
+    font-size:1.2rem;
+    }
+
+
+
+
+#Container>nav>.nav_icons{
+
+    display: flex;
+
+}
+#Container>nav>.nav_icons li{
+margin:0.8rem 0.8rem;
+
+}
+#Container>nav>.nav_icons li a{ 
+    color:#ffffff;
+  
+
+}
+#Container>nav>.nav_icons>li a i{
+    font-size: 2.0rem;
+}
+
+
+#Container> #fullpage .s0{
+   
+
+    background: url(../images/main01.jpg) no-repeat center / cover;
+
+}
+#Container>#fullpage .s1{
+
+    background: url(../images/main02.jpg) no-repeat center / cover;
+    
+}
+
+#Container> #fullpage .s2{
+
+    background: url(../images/main03.jpg) no-repeat center / cover;
+     
+}
+#Container> #fullpage .s3{
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#Container> #fullpage .s4{
+
+ display: flex;
+ flex:1 auto;
+ text-align: center;
+ border-top:0.1rem solid black;
+ padding:2rem;
+     
+}
+
+#Container> #fullpage .s4 .footerinner .top{
+    display: flex;
+    justify-content: center;
+}
+#Container> #fullpage .s4 .footerinner .top li{
+    margin:1.0rem 0.5rem;
+}
+#Container> #fullpage .s4 .footerinner .bottom li{
+    margin: 2rem 0.5rem;
+}
+#Container> #fullpage .s4 .footerinner a>i{
+ font-size: 3.0rem;
+}
+#Container> #fullpage .s4 a:hover{
+
+    color:#9e9e9e;
+    transition: ease-out 0.3s;
+}
+
+.textCon{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textCon p{
+    font-size: 2.5rem;
+}
+
+.textCon p:nth-child(4){
+    font-size: 2.0rem;
+}
+.textCon a{
+    margin:3rem;
+}
+.textCon a>i{
+    font-size:4rem;
+}
+
+#fp-nav ul li a span{
+  background: #f1f1f1;
+ 
+    
+}
+
