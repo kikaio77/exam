@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,8 +73,18 @@
                 </li>
             </ul>
             <ul class="nav_icons">
-
-                <li><a class="loginbtn" href="#"><i class="xi-log-in"></i></a></li>
+                 
+                 <c:choose>
+                  <c:when test="${sessionScope.account.id !=null}">
+                    <li><a class="loginbtn" href="#">${sessionScope.account.name}님<i id="loginout"class="xi-log-out"></i></a></li>
+                    
+                  </c:when>
+                 
+                 <c:otherwise>
+                   <li><a class="loginbtn" href="#"><i class="xi-log-in"></i></a></li>
+                 </c:otherwise>
+                 </c:choose>
+              
                 <li><a href="#"><i class="xi-user-o"></i></a></li>
                 <li><a href="#"><i class="xi-briefcase"></i></a></li>
                 <li><a href="#"><i class="xi-search"></i></a></li>
@@ -124,6 +135,35 @@
     <script>
         const logo = $("#Container>nav>.nav_menus li .main_logo>img");
         
+             document.getElementById("login").addEventListener("click",function(e){
+        	  e.preventDefault();
+        	  location.href="${pageContext.request.contextPath}/member/login?id="+$("#id").val()+"&pw="+$("#pw").val();
+        	  
+        	  
+        	  
+          });
+
+      
+        
+          
+            /* /*  document.querySelector(".xi-log-out").addEventListener("click",function(e){
+        	  e.preventDefault();
+        	  let logout = prompt("정말 로그아웃 하시겠습니까?");
+        	  
+        	  if(logout){
+        		  location.href="${pageContext.request.contextPath}/member/logout";
+        	  }
+        	  else{
+        		  return false;
+        		  
+        	  }
+        	  
+        	  }); */
+        	 
+ 
+        	 
+        
+        
             document.getElementById("joinus").addEventListener("click",function(){
             
             	location.href="${pageContext.request.contextPath}/member/join";
@@ -139,7 +179,9 @@
 
 
             $(function () {
-
+                 
+            	
+           
                 pwChangeToggle();
   
                 $("nav").animate({
@@ -180,9 +222,24 @@
             //             marginLeft: "0px"
             //         });
             //     });
-                $(".loginbtn").on("click",function(){
+                $(".loginbtn").on("click",function(e){
+                	e.preventDefault();
+                	if($(".loginbtn>i").hasClass("xi-log-out")){
+                		let loginBool = confirm("정말 로그아웃하시겠습니까?");
+                          
+                		if(loginBool){
+                			
+                			  location.href="${pageContext.request.contextPath}/member/logout";	
+                		}else{
+                			
+                			return false;}
+             	
+       
+                	}
+                	
+                	else{
                     $("#Container >.loginView").addClass("on");
-        
+                	}
                 });
 
                 $(".sect01").on("click",function(){

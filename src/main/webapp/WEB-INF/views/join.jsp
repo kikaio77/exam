@@ -80,10 +80,11 @@
                    
                 </div></li>
                 <li>
-                    <div class="phoneTopTitle">
+                    <div class="phoneTopTitle"></div>
                         <div><span>휴대전화</span></div>
                          <div class="phoneNumCon">
-                           <select name="phone1" id="phone1">
+                          <input type="text" id="phone" name="phone" />
+                           <!-- <select name="phone1" id="phone1">
                                <option value="010">010</option>
                                <option value="011">011</option>
                                <option value="016">016</option>
@@ -92,7 +93,7 @@
                                <option value="019">019</option>
                            </select><span class="hypen">-</span><input type="text" id="phone2" name="phone2"><span class="hypen">-</span><input type="text" id="phone3" name="phone3">
                         
-                    </div>
+                    </div> -->
                     </div>
                 </li>
                 <li><div class="emailTopTitle">
@@ -252,7 +253,7 @@
                                 부 칙(시행일) 이 약관은 년 월 일부터 시행합니다. 부 칙(시행일) 이 약관은 년 월 일부터 시행합니다.
                             </div>
                             <div class="must1Agree"><span>이용약관에 동의하십니까?</span>
-                                <input type="checkbox" name="mustCheck" id="mustCheck1"><label for="mustCheck1"> 동의함</label>
+                                <input type="checkbox" name="mustAgree" value="Y" id="mustCheck1"><label for="mustCheck1"> 동의함</label>
                             </div>
                     </div>
                     <div class="mustCheckCon2">
@@ -288,7 +289,7 @@
                            
                     
                         </div>
-                        <div class="must2Agree"><span>개인정보 수집 및 이용에 동의하십니까?</span><input type="checkbox" name="mustCheck" id="mustCheck2"><label for="mustCheck2"> 동의함</label>
+                        <div class="must2Agree"><span>개인정보 수집 및 이용에 동의하십니까?</span><input type="checkbox"   id="mustCheck2"><label for="mustCheck2"> 동의함</label>
                         </div>
                     </div>
                     <div class="chooseCheckCon">
@@ -301,8 +302,8 @@
                         </div>
                         <div class="chooseAgree">
                             <ul>
-                                <li><div><span>SMS 수신을 동의하십니까?</span><input type="checkbox" name="choose" id="choose1"><label for="choose1">동의함</label></div></li>
-                                <li><div><span>이메일 수신을 동의하십니까?</span><input type="checkbox" name="choose" id="choose2"><label for="choose2">동의함</label></div></li>
+                                <li><div><span>SMS 수신을 동의하십니까?</span><input type="checkbox" name="smsagree" value="Y" id="choose1"><label for="choose1">동의함</label></div></li>
+                                <li><div><span>이메일 수신을 동의하십니까?</span><input type="checkbox" name="emailagree" value="Y" id="choose2"><label for="choose2">동의함</label></div></li>
                             </ul>
                         </div>
                     </div>
@@ -357,7 +358,17 @@
 
 
         $(function () {
+             
+        	
+        	$("#submit").click(function(e){
+        		e.preventDefault();
+    
+       location.href="${pageContext.request.contextPath}/member/joinSuccess?id="+$("#id").val()+"&pw="+$("#pw").val()+"&name="+$("#name").val()+"&phone="+$("#phone").val()+"&email="+$("#email").val()+"&mustagree="+$("#mustCheck1").val()+"&smsagree="+$("#choose1").val()+"&emailagree="+$("#choose2").val();
+       
 
+     
+        	});
+        	
             $("#Container").addClass("on");
 
             $("#pw2").on("focusout",function(){
